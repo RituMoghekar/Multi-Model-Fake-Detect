@@ -44,17 +44,23 @@ This project simulates a real-world **AI content authenticity engine** combining
 
 ---
 
-### 🎧 Audio Fake Detection (MFCC + Whisper + NLP Fusion)
+### 🎧 Audio Fake Detection (MFCC + Random Forest + Whisper + Explainability)
 
 * Pipeline:
 
-  * Audio → Whisper transcription → NLP classification
-* MFCC-based pretrained classifier for audio authenticity
+  * MFCC + Random Forest Model → primary classifier for real/fake detection
+  * Whisper → speech-to-text only (NOT a classifier)
+
+    * Used only for:
+
+      * transcription
+      * explainability input for text-level analysis
+
 * **Explainability:**
 
-  * Segment-level speech breakdown
-  * Confidence per audio segment
-  * Transcription visualization
+  * Segment-level scoring (audio chunks)
+  * Confidence score per chunk
+  * Transcript visualization aligned with audio segments
 
 ---
 
@@ -114,23 +120,8 @@ This project simulates a real-world **AI content authenticity engine** combining
 ## 🧠 System Architecture
 
 ```
-                ┌──────────────┐
-                │   Input Data  │
-                └──────┬───────┘
-                       │
-     ┌─────────────────┼─────────────────┐
-     │                 │                 │
- Image Model      Text Model       Audio Model
-(ResNet18)     (BART MNLI)     (MFCC + Whisper)
-     │                 │                 │
-     └──────────────┬────────────────────┘
-                    │
-         Multimodal Fusion Engine
-                    │
-        Final Prediction (Real/Fake)
-                    │
-          Explainability Layer
- (Grad-CAM + NLP + Audio Segments)
+![Multimodal Fake Detection Architecture](assets/architecture.png)
+
 ```
 
 ---
