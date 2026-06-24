@@ -1,0 +1,20 @@
+streamlit
+numpy
+opencv-python
+pillow
+
+torch
+torchvision
+
+transformers
+scikit-learn
+joblib
+
+ffmpeg-python
+
+# audio / NLP
+sentencepiece
+tokenizers
+
+# optional but commonly needed
+tqdm
