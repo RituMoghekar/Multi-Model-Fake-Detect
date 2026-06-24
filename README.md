@@ -120,7 +120,7 @@ This project simulates a real-world **AI content authenticity engine** combining
 ## 🧠 System Architecture
 
 ```
-![Multimodal Fake Detection Architecture](assets/architecture.png)
+![Architecture Diagram](fusion/assets/architecture.png)
 
 ```
 
