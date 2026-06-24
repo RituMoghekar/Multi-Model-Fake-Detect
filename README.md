@@ -119,10 +119,8 @@ This project simulates a real-world **AI content authenticity engine** combining
 
 ## 🧠 System Architecture
 
-```
 ![Architecture Diagram](fusion/assets/architecture.png)
 
-```
 
 ---
 
